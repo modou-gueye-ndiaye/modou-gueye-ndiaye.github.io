@@ -93,14 +93,14 @@
   }
   .hero-name em { color: var(--gold); font-style: normal; display: block; }
   .hero-subtitle {
-    font-size: 14px; color: rgba(255,255,255,0.5);
+    font-size: 14px; color: rgba(255,255,255,0.75);
     letter-spacing: 0.5px; margin-bottom: 24px; line-height: 1.6;
   }
   .hero-desc {
-    font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.75;
+    font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.75;
     margin-bottom: 32px;
   }
-  .hero-desc strong { color: rgba(255,255,255,0.9); }
+  .hero-desc strong { color: var(--gold-light); }
   .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
@@ -126,21 +126,21 @@
     display: flex; flex-direction: column; gap: 12px;
   }
   .info-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.13);
     border-radius: 8px; padding: 16px 18px;
   }
   .info-card-label {
     font-size: 9px; font-weight: 500; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;
   }
   .info-card-items { display: flex; flex-wrap: wrap; gap: 5px; }
   .info-pill {
-    font-size: 10px; background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7); padding: 3px 10px; border-radius: 20px;
+    font-size: 10px; background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.88); padding: 3px 10px; border-radius: 20px;
   }
-  .info-pill.gold { border-color: rgba(201,168,76,0.4); color: var(--gold-light); }
+  .info-pill.gold { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.5); color: var(--gold-light); }
 
   /* ── SECTIONS ── */
   section { padding: 80px 0; }
@@ -302,7 +302,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">M<span>.</span>GN</div>
+  <div class="nav-logo">Modou <span>GUEYE NDIAYE</span></div>
   <div class="nav-links">
     <a href="#competences">Compétences</a>
     <a href="#projets">Projets</a>
@@ -317,10 +317,10 @@
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-tag">Alternant BTS SIO – SISR</div>
-      <div class="hero-name">Modou<em>Gueye Ndiaye</em></div>
+      <div class="hero-name">Modou<em>GUEYE NDIAYE</em></div>
       <div class="hero-subtitle">Systèmes &amp; Réseaux · Disponible dès Septembre 2026</div>
       <p class="hero-desc">
-        Étudiant en Licence Informatique à Rouen, j'utilise <strong>Linux comme système principal au quotidien</strong>. Passionné par les systèmes et les réseaux, je me réoriente vers le BTS SIO SISR pour bâtir une expertise technique solide directement en entreprise. Mon parcours atypique — plusieurs pays, plusieurs domaines — m'a forgé une vraie capacité d'adaptation et un sens aigu des responsabilités.
+        Étudiant en Licence Informatique, <strong>utilisateur avancé Linux (Ubuntu)</strong> en environnement personnel. Je me réoriente vers le <strong>BTS SIO option SISR</strong> — Services Informatiques aux Organisations, spécialité Solutions d'Infrastructure, Systèmes et Réseaux — pour bâtir une expertise concrète en administration systèmes, réseaux et infrastructure IT directement en entreprise. Mon parcours atypique — plusieurs pays, plusieurs domaines — m'a forgé une vraie capacité d'adaptation et un sens aigu des responsabilités.
       </p>
       <div class="hero-btns">
         <a href="CV_Modou_Gueye_Ndiaye.html" class="btn-primary">📄 Voir le CV</a>
@@ -332,7 +332,7 @@
         <div class="info-card-label">Systèmes maîtrisés</div>
         <div class="info-card-items">
           <span class="info-pill gold">Ubuntu / Linux</span>
-          <span class="info-pill">Windows</span>
+          <span class="info-pill gold">Windows</span>
           <span class="info-pill">VirtualBox</span>
           <span class="info-pill">Bash</span>
         </div>
@@ -351,7 +351,7 @@
       <div class="info-card">
         <div class="info-card-label">Infos pratiques</div>
         <div class="info-card-items">
-          <span class="info-pill gold">Rouen (76)</span>
+          <span class="info-pill gold">Mobilité nationale</span>
           <span class="info-pill">Permis B</span>
           <span class="info-pill">3j/2j</span>
           <span class="info-pill">Sept. 2026</span>
@@ -409,10 +409,10 @@
       <div class="skill-block">
         <div class="skill-block-title">💻 Développement &amp; Méthodes</div>
         <div class="skill-list">
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Python</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Python — dont Jupyter Lab / Notebook</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
           <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">C (algorithmique, logique)</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
           <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">SQL — bases de données</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">PHP · HTML/CSS</span><span class="skill-badge badge-mid">Notions</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">PHP · HTML / CSS</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
           <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Git / GitHub</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
           <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Tests, débogage, gestion de projet</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
         </div>
@@ -434,19 +434,22 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-title">Projet « Langaboury »</div>
+          <div class="project-title">Projet « Langaboury » — Jeu de chasse au trésor</div>
           <div class="project-date">2025 – 2026</div>
         </div>
-        <div class="project-org">Université de Rouen — Projet collaboratif</div>
+        <div class="project-org">Association étudiante — Journées d'intégration · Équipe de 4</div>
         <div class="project-desc">
-          <p><strong>Contexte :</strong> Développement complet d'un jeu en équipe dans le cadre de la licence informatique.</p>
-          <p><strong>Ce qui a été fait :</strong> Architecture full-stack — logique de jeu en C et Python, interface web en HTML/CSS/PHP, base de données SQL pour la persistance des scores et utilisateurs. Mise en place de mesures de sécurité pour le site (protection des données, gestion des accès) et configuration réseau du projet.</p>
-          <p><strong>Ma contribution :</strong> Participation à la conception algorithmique, développement de modules, gestion de version via GitHub, tests unitaires et coordination agile.</p>
+          <p><strong>Contexte :</strong> Dans le cadre des journées d'intégration d'une association étudiante (hors université), notre équipe de 4 a conçu et développé un jeu de chasse au trésor interactif en ligne. Plusieurs équipes participaient en parallèle, chacune avec ses propres énigmes, pour converger vers un objectif final commun.</p>
+          <p><strong>Mon rôle :</strong> Participation à la conception du scénario et de l'architecture du projet, développement de l'interface utilisateur et de l'interface administrateur (HTML/CSS), implémentation des fonctionnalités dynamiques (PHP/JavaScript), mise en place du système de validation des réponses et de gestion de la progression des joueurs niveau par niveau.</p>
+          <p><strong>Base de données :</strong> Conception et gestion d'une BDD SQL pour stocker les énigmes, les réponses, les comptes utilisateurs/admin et sauvegarder la progression de chaque équipe en temps réel.</p>
+          <p><strong>Travail d'équipe :</strong> Répartition claire des tâches, communication régulière pour maintenir la cohérence entre les modules, versioning via GitHub pour collaborer sans conflits.</p>
+          <p><strong>Résultat :</strong> Jeu fonctionnel déployé et utilisé lors des journées d'intégration — les joueurs pouvaient s'inscrire, résoudre des énigmes progressives et suivre leur avancement jusqu'au trésor final.</p>
         </div>
         <div class="project-tags">
-          <span class="project-tag">C</span><span class="project-tag">Python</span><span class="project-tag">PHP</span>
-          <span class="project-tag">SQL</span><span class="project-tag">HTML/CSS</span><span class="project-tag">GitHub</span>
-          <span class="project-tag">Sécurité web</span><span class="project-tag">Réseau</span><span class="project-tag">Agile</span>
+          <span class="project-tag">PHP</span><span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">JavaScript</span><span class="project-tag">SQL</span>
+          <span class="project-tag">GitHub</span><span class="project-tag">Travail en équipe</span>
+          <span class="project-tag">Gestion de projet</span>
         </div>
       </div>
 
@@ -455,16 +458,19 @@
           <div class="project-title">Conception d'un réseau social</div>
           <div class="project-date">2024 – 2025</div>
         </div>
-        <div class="project-org">Université de Rouen</div>
+        <div class="project-org">Université de Rouen — Projet individuel</div>
         <div class="project-desc">
-          <p><strong>Contexte :</strong> Projet de conception d'une plateforme sociale complète dans le cadre de la licence.</p>
-          <p><strong>Ce qui a été fait :</strong> Analyse des besoins et conception de l'architecture. Développement des fonctionnalités : inscription, authentification, publication de contenu, messagerie entre utilisateurs. Mise en place de la base de données SQL, gestion des utilisateurs et des données. Déploiement sur machines virtuelles VirtualBox.</p>
-          <p><strong>Compétences mobilisées :</strong> Modélisation BDD, développement back-end PHP, gestion de VMs pour l'hébergement, contrôle de version Git.</p>
+          <p><strong>Contexte :</strong> Projet personnel mené en autonomie complète dans le cadre de la licence — concevoir et développer de A à Z une plateforme sociale inspirée de Facebook, pour maîtriser l'ensemble du cycle de développement web full-stack.</p>
+          <p><strong>Conception :</strong> Définition des fonctionnalités cibles (inscription, connexion, profil, publications, messagerie), modélisation de la base de données MySQL, réflexion sur l'architecture des pages et l'expérience utilisateur.</p>
+          <p><strong>Développement :</strong> Interface HTML/CSS responsive, système d'inscription et de connexion sécurisé (hachage de mots de passe, gestion de sessions), profils utilisateurs personnalisables, publication de posts avec affichage dynamique, messagerie entre utilisateurs.</p>
+          <p><strong>Difficultés surmontées :</strong> Gérer la sécurité de l'authentification et la protection des données utilisateurs, organiser un code propre et maintenable sur un projet de cette ampleur, concevoir une BDD cohérente capable de gérer les relations entre utilisateurs.</p>
+          <p><strong>Résultat :</strong> Plateforme sociale fonctionnelle déployée sur machine virtuelle VirtualBox — ce projet m'a donné une vision concrète de ce que représente un projet web complet, de la base de données jusqu'à l'interface finale.</p>
         </div>
         <div class="project-tags">
-          <span class="project-tag">PHP</span><span class="project-tag">SQL</span>
-          <span class="project-tag">HTML/CSS</span><span class="project-tag">VirtualBox</span><span class="project-tag">Git</span>
-          <span class="project-tag">Architecture BDD</span>
+          <span class="project-tag">PHP</span><span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">MySQL</span><span class="project-tag">JavaScript</span>
+          <span class="project-tag">VirtualBox</span><span class="project-tag">Git</span>
+          <span class="project-tag">Sécurité web</span><span class="project-tag">Autonomie</span>
         </div>
       </div>
 
@@ -473,15 +479,17 @@
           <div class="project-title">Développement du jeu Awalé</div>
           <div class="project-date">2023 – 2024</div>
         </div>
-        <div class="project-org">Université de Perpignan Via Domitia</div>
+        <div class="project-org">Université de Perpignan Via Domitia — Examen de fin d'année · Langage C</div>
         <div class="project-desc">
-          <p><strong>Contexte :</strong> Projet individuel de programmation en C dans le cadre de la licence.</p>
-          <p><strong>Ce qui a été fait :</strong> Implémentation complète du jeu de société africain Awalé — distribution et capture des billes, gestion des règles, boucle de jeu, interface en mode terminal. Débogage complet et optimisation du code, validation fonctionnelle.</p>
-          <p><strong>Compétences mobilisées :</strong> Algorithmique, structures de données, gestion de la logique métier complexe, débogage en terminal.</p>
+          <p><strong>Contexte :</strong> Exercice d'examen de fin d'année en langage C — implémenter un jeu d'awalé fonctionnel avec un rendu visuel propre en terminal (plateau tracé avec des caractères, affichage clair des graines et du score). Un exercice de programmation pure, sans framework, sans filet.</p>
+          <p><strong>Le jeu :</strong> L'awalé est un jeu de stratégie traditionnel africain (famille des jeux de semailles) — deux joueurs, un plateau de 12 cases, des graines à distribuer en sens antihoraire et à capturer selon des règles précises (cases adverses contenant 2 ou 3 graines). Interdiction de bloquer totalement l'adversaire, fin de partie quand les coups sont épuisés.</p>
+          <p><strong>Difficultés techniques :</strong> Les règles de l'awalé cachent de nombreux cas particuliers — distributions en chaîne, conditions de capture multiples, détection de blocage, fin de partie anticipée. Les modéliser rigoureusement en C tout en maintenant la cohérence entre la logique de jeu et l'affichage terminal a demandé méthode et tests exhaustifs.</p>
+          <p><strong>Résultat :</strong> Programme fonctionnel rendu en examen — deux joueurs pouvaient s'affronter avec un plateau visuel lisible, un calcul de score automatique et une gestion correcte de toutes les règles.</p>
         </div>
         <div class="project-tags">
           <span class="project-tag">C</span><span class="project-tag">Algorithmique</span>
-          <span class="project-tag">Structures de données</span><span class="project-tag">Débogage</span>
+          <span class="project-tag">Gestion d'états</span><span class="project-tag">Affichage terminal</span>
+          <span class="project-tag">Débogage</span><span class="project-tag">Examen individuel</span>
         </div>
       </div>
 
@@ -506,8 +514,8 @@
           <div class="tl-date">2024 – 2025</div>
         </div>
         <div class="tl-org">Copa Cabana — Collioure, France</div>
-        <div class="tl-desc">Préparation des entrées et plats froids, mise en place du poste, gestion des stocks de la partie froide. Coordination avec la brigade chaude lors des services. Rigueur absolue sur les normes HACCP.</div>
-        <div class="tl-tags"><span class="tl-tag">Rigueur</span><span class="tl-tag">Organisation</span><span class="tl-tag">Normes HACCP</span><span class="tl-tag">Travail en équipe</span></div>
+        <div class="tl-desc">En charge de la totalité de la partie froide : préparation des entrées et plats froids, mise en place rigoureuse du poste avant chaque service, gestion des stocks et des approvisionnements. Coordination constante avec la brigade chaude pour assurer la fluidité du service, en respectant des délais serrés pendant les pics d'affluence. Application stricte des normes HACCP à chaque étape. Cette expérience m'a forgé un niveau d'exigence et d'organisation que je retrouve directement dans mon approche technique : rien ne s'improvise, tout se prépare.</div>
+        <div class="tl-tags"><span class="tl-tag">Rigueur</span><span class="tl-tag">Organisation</span><span class="tl-tag">Normes HACCP</span><span class="tl-tag">Gestion des priorités</span><span class="tl-tag">Travail en équipe</span></div>
       </div>
 
       <div class="tl-item">
@@ -517,8 +525,8 @@
           <div class="tl-date">2023 – 2024</div>
         </div>
         <div class="tl-org">KFC Perpignan Porte d'Espagne — France</div>
-        <div class="tl-desc">Rotation permanente sur 4 postes distincts : préparateur de commandes, caissier, preneur de commande en salle et production. Gestion des flux clients en service à fort volume avec respect strict des protocoles qualité et sécurité alimentaire.</div>
-        <div class="tl-tags"><span class="tl-tag">Multi-postes</span><span class="tl-tag">Gestion du stress</span><span class="tl-tag">Procédures qualité</span><span class="tl-tag">Fiabilité</span></div>
+        <div class="tl-desc">Rotation permanente sur 4 postes distincts au sein d'un même service : préparateur de commandes, caissier, preneur de commande en salle, production cuisine. Gérer 4 rôles différents dans un environnement à fort volume de clients demande une adaptation quasi immédiate — pas le temps de tâtonner, les procédures qualité et sécurité alimentaire doivent être respectées quel que soit le poste. Cette capacité à basculer d'un contexte à l'autre sans perdre en fiabilité est une compétence que je mobilise aussi bien en cuisine qu'en informatique.</div>
+        <div class="tl-tags"><span class="tl-tag">Polyvalence</span><span class="tl-tag">Gestion du stress</span><span class="tl-tag">Procédures qualité</span><span class="tl-tag">Réactivité</span><span class="tl-tag">Fiabilité</span></div>
       </div>
 
       <div class="tl-item">
@@ -528,8 +536,8 @@
           <div class="tl-date">2022 – 2023</div>
         </div>
         <div class="tl-org">Le Monte Cristo — Argelès-sur-Mer, France</div>
-        <div class="tl-desc">Polyvalence selon les services et les besoins : exécution des préparations et cuissons en tant que commis, ou coordination de la brigade chaude et prise de décisions en tant que second. Gestion des priorités et des délais sous pression en service à flux tendu.</div>
-        <div class="tl-tags"><span class="tl-tag">Coordination d'équipe</span><span class="tl-tag">Prise de décision</span><span class="tl-tag">Gestion priorités</span><span class="tl-tag">Adaptabilité</span></div>
+        <div class="tl-desc">Poste évolutif selon les besoins du service : commis le matin (exécution, préparations, cuissons), second en soirée (coordination de la brigade, prise de décisions, gestion des priorités en flux tendu). Passer d'un rôle d'exécution à un rôle de coordination dans la même journée exige une lecture rapide de la situation et une autorité naturelle. Cette expérience m'a appris à prendre des décisions sous pression sans sacrifier la qualité — une logique que j'applique face aux problèmes techniques.</div>
+        <div class="tl-tags"><span class="tl-tag">Leadership</span><span class="tl-tag">Coordination d'équipe</span><span class="tl-tag">Prise de décision</span><span class="tl-tag">Adaptabilité</span></div>
       </div>
 
       <div class="tl-item">
@@ -539,8 +547,8 @@
           <div class="tl-date">2021 – 2022</div>
         </div>
         <div class="tl-org">Mairie de Perpignan — France</div>
-        <div class="tl-desc">Accompagnement quotidien d'élèves de collège et lycée (17h–19h, tous les jours ouvrés). Aide aux devoirs dans toutes les matières, explication des cours, soutien individualisé selon les besoins de chaque élève. Animation d'activités éducatives et ludiques selon les jours.</div>
-        <div class="tl-tags"><span class="tl-tag">Pédagogie</span><span class="tl-tag">Communication</span><span class="tl-tag">Régularité</span><span class="tl-tag">Initiative</span><span class="tl-tag">Écoute</span></div>
+        <div class="tl-desc">Accompagnement quotidien d'élèves de collège et lycée, 17h–19h tous les jours ouvrés. Aide aux devoirs toutes matières, explication des cours, soutien individualisé selon le niveau et les blocages de chaque élève, animation d'activités éducatives. Le défi principal : adapter son discours et sa pédagogie à chaque profil — un élève qui décroche n'a pas besoin qu'on lui répète la même chose plus fort, mais différemment. Cette capacité d'écoute et d'adaptation à l'interlocuteur, je la retrouve dans ma façon de travailler en équipe technique.</div>
+        <div class="tl-tags"><span class="tl-tag">Pédagogie</span><span class="tl-tag">Écoute active</span><span class="tl-tag">Communication</span><span class="tl-tag">Régularité</span><span class="tl-tag">Initiative</span></div>
       </div>
 
       <div class="tl-item">
@@ -550,8 +558,8 @@
           <div class="tl-date">2019 – 2021</div>
         </div>
         <div class="tl-org">Gueye et Frères — Dakar, Sénégal</div>
-        <div class="tl-desc">Réalisation des inventaires hebdomadaires, rangement et organisation des marchandises, accueil et conseil des clients, vente et présentation des produits. Gestion autonome de la caisse (ouverture, tenue, fermeture).</div>
-        <div class="tl-tags"><span class="tl-tag">Sens commercial</span><span class="tl-tag">Organisation</span><span class="tl-tag">Gestion de caisse</span><span class="tl-tag">Fiabilité</span></div>
+        <div class="tl-desc">Première expérience professionnelle au sein de l'entreprise familiale : inventaires hebdomadaires, organisation et rangement des marchandises, accueil et conseil client, vente et gestion autonome de la caisse (ouverture, tenue, fermeture). Travailler en autonomie sur des responsabilités financières dès 18 ans demande rigueur et fiabilité — on ne peut pas se permettre les erreurs. C'est ici que j'ai développé mon sens de l'organisation et ma capacité à assumer des responsabilités sans supervision constante.</div>
+        <div class="tl-tags"><span class="tl-tag">Autonomie</span><span class="tl-tag">Sens commercial</span><span class="tl-tag">Gestion de caisse</span><span class="tl-tag">Organisation</span><span class="tl-tag">Fiabilité</span></div>
       </div>
 
     </div>
@@ -570,14 +578,14 @@
       <div class="formation-card">
         <div class="formation-date">Depuis 2024</div>
         <div class="formation-title">Licence Portail Informatique</div>
-        <div class="formation-org">Université de Rouen — Rouen</div>
-        <div class="formation-desc">Algorithmique avancée, programmation orientée objet, bases de données SQL, réseaux, systèmes d'exploitation, développement web (PHP, HTML/CSS).</div>
+        <div class="formation-org">Université de Rouen</div>
+        <div class="formation-desc">Formation couvrant les fondamentaux théoriques et pratiques de l'informatique : <strong>Base et méthodologie de la programmation impérative</strong>, <strong>Algorithmique et programmation en C</strong>, <strong>Logique et structures algébriques</strong>, <strong>Logique combinatoire et séquentielle</strong>, <strong>Espaces vectoriels</strong>, <strong>Architectures des ordinateurs</strong> (dont programmation en assembleur), <strong>Outils de développement web</strong> (HTML/CSS/PHP), <strong>Outils d'analyse</strong>. Projets pratiques en équipe et en autonomie tout au long de l'année.</div>
       </div>
       <div class="formation-card">
         <div class="formation-date">2022 – 2024</div>
         <div class="formation-title">Préparation Mathématiques &amp; Informatique</div>
         <div class="formation-org">Université de Perpignan Via Domitia</div>
-        <div class="formation-desc">Bases solides en algorithmique, logique formelle, architecture des systèmes, mathématiques discrètes. Développement en C, Pascal et Python.</div>
+        <div class="formation-desc">Formation sur deux ans en deux blocs distincts. <strong>Année maths :</strong> logique formelle, algèbre, analyse, statistiques et probabilités, bases du raisonnement, théorie des jeux. <strong>Année informatique :</strong> algorithmique et programmation Python, culture informatique, architecture et composants du processeur, modélisation et analyse de données avec RStudio, développement web. Des bases solides en raisonnement formel qui structurent directement mon approche technique.</div>
       </div>
     </div>
   </div>
@@ -589,7 +597,7 @@
     <span class="sec-tag">Me contacter</span>
     <h2 class="sec-title">Disponible dès Septembre 2026</h2>
     <div class="sec-line"></div>
-    <p class="contact-intro">Je recherche une alternance en BTS SIO option SISR dans la région de Rouen.<br>N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
+    <p class="contact-intro">Je recherche une alternance en BTS SIO (Services Informatiques aux Organisations) option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) — ouvert aux opportunités sur toute la France.<br>N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
     <div class="contact-grid">
       <a href="tel:0652660331" class="contact-card">
         <div class="contact-card-icon">📞</div>
@@ -609,13 +617,4 @@
     </div>
     <a href="https://github.com/modou-gueye-ndiaye" target="_blank" class="btn-secondary" style="display:inline-flex">
       GitHub — github.com/modou-gueye-ndiaye →
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Modou Gueye Ndiaye — Portfolio personnel · Alternance BTS SIO SISR
-</footer>
-
-</body>
-</html>
+    </a
