@@ -164,7 +164,7 @@
   }
 
   /* COMPÉTENCES */
-  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   .skill-block {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -177,15 +177,16 @@
     text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;
     padding-bottom: 8px; border-bottom: 1px solid var(--border);
   }
-  .skill-list { display: flex; flex-direction: column; gap: 7px; }
-  .skill-line { display: flex; align-items: center; gap: 10px; }
+  .skill-list { display: flex; flex-direction: column; gap: 10px; }
+  .skill-line { display: flex; align-items: flex-start; gap: 10px; }
   .skill-dot-m {
     width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold); flex-shrink: 0; opacity: 0.7;
+    background: var(--gold); flex-shrink: 0; opacity: 0.7; margin-top: 5px;
   }
-  .skill-name { font-size: 12px; color: var(--text); flex: 1; }
+  .skill-name { font-size: 12px; color: var(--text); flex: 1; line-height: 1.5; }
   .skill-badge {
     font-size: 9px; padding: 2px 8px; border-radius: 20px; font-weight: 500;
+    white-space: nowrap; margin-top: 2px; flex-shrink: 0;
   }
   .badge-solid { background: #e8f0e8; color: #2d6a2d; border: 1px solid #b5d4b5; }
   .badge-mid   { background: #eef2f8; color: var(--navy-light); border: 1px solid #c8d8f0; }
@@ -373,49 +374,65 @@
     <div class="skills-grid">
 
       <div class="skill-block">
-        <div class="skill-block-title">🖥 Linux / Ubuntu — Usage quotidien</div>
+        <div class="skill-block-title">🖥 Linux / Ubuntu</div>
         <div class="skill-list">
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Système principal au quotidien</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Terminal : navigation, gestion fichiers</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Permissions : chmod, chown, sudo</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Gestion paquets apt, mises à jour</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Partitions &amp; montages de disques</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Scripts Bash (automatisation)</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Personnalisation &amp; config système</span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Navigation & gestion de fichiers en terminal<br><small style="color:var(--muted);font-size:10px">Création, déplacement, recherche, archivage — usage quotidien depuis plusieurs années</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Installation de logiciels via apt<br><small style="color:var(--muted);font-size:10px">apt install / update / upgrade / remove, gestion des dépôts</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Gestion des permissions<br><small style="color:var(--muted);font-size:10px">chmod, chown, sudo — droits fichiers, utilisateurs, groupes</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Partitions & montages de disques<br><small style="color:var(--muted);font-size:10px">mount, fdisk, gestion de l'espace disque</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Scripts Bash<br><small style="color:var(--muted);font-size:10px">Écrits en TP : automatisation de commandes, génération de résultats dans des fichiers .txt, structures de contrôle basiques</small></span><span class="skill-badge badge-mid">Débutant+</span></div>
         </div>
       </div>
 
       <div class="skill-block">
-        <div class="skill-block-title">🌐 Réseaux — Bases théoriques</div>
+        <div class="skill-block-title">🌐 Réseaux & Infrastructure</div>
         <div class="skill-list">
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">TCP/IP, adressage IPv4</span><span class="skill-badge badge-learn">Théorie</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">DNS, DHCP — définitions &amp; rôles</span><span class="skill-badge badge-learn">Théorie</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">NAT, Bridge, Host-only — définitions</span><span class="skill-badge badge-learn">Théorie</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">ping, traceroute — diagnostics de base</span><span class="skill-badge badge-mid">Notions</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Routage, sous-réseaux</span><span class="skill-badge badge-learn">Théorie</span></div>
-        </div>
-        <p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">La pratique approfondie sera construite en BTS SIO SISR.</p>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-block-title">🪟 Windows &amp; Virtualisation</div>
-        <div class="skill-list">
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Windows — maîtrise système</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Pack Office (Word, Excel, PowerPoint)</span><span class="skill-badge badge-solid">Maîtrise</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">VirtualBox — création &amp; gestion de VMs</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Active Directory</span><span class="skill-badge badge-learn">Rôle connu</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Serveur SSH<br><small style="color:var(--muted);font-size:10px">Configuré lors du projet Langaboury : connexion entre mon PC et celui d'un ami, puis entre son PC et une VM pour tester l'avancement du projet</small></span><span class="skill-badge badge-mid">Pratiqué</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Serveur Web Apache<br><small style="color:var(--muted);font-size:10px">Déploiement d'une page web lors du projet collaboratif, avec l'aide d'un ami</small></span><span class="skill-badge badge-mid">Pratiqué</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Configuration réseau domestique<br><small style="color:var(--muted);font-size:10px">Installation et configuration complète d'une box internet (branchements, paramétrage, suivi instructions conseiller)</small></span><span class="skill-badge badge-mid">Réalisé</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Notions fondamentales : TCP/IP, DNS, DHCP, NAT<br><small style="color:var(--muted);font-size:10px">Bases théoriques solides — pratique approfondie prévue en BTS SISR</small></span><span class="skill-badge badge-learn">Théorie</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Diagnostics réseau : ping, traceroute<br><small style="color:var(--muted);font-size:10px">Utilisation courante pour tester la connectivité</small></span><span class="skill-badge badge-mid">Notions</span></div>
         </div>
       </div>
 
       <div class="skill-block">
-        <div class="skill-block-title">💻 Développement &amp; Méthodes</div>
+        <div class="skill-block-title">🪟 Windows & Virtualisation</div>
         <div class="skill-list">
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Python — dont Jupyter Lab / Notebook</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">C (algorithmique, logique)</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">SQL — bases de données</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">PHP · HTML / CSS</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Git / GitHub</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
-          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Tests, débogage, gestion de projet</span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Windows — utilisation système complète<br><small style="color:var(--muted);font-size:10px">Utilisé pendant des années : gestion fichiers, paramétrage, maintenance de base</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Pack Office — Word, Excel, PowerPoint<br><small style="color:var(--muted);font-size:10px">Usage courant : rédaction, tableaux, présentations</small></span><span class="skill-badge badge-solid">Maîtrise</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">VirtualBox — création de VMs de A à Z<br><small style="color:var(--muted);font-size:10px">Création, configuration, démarrage de machines virtuelles — utilisé pour les projets et TP (réseau social, Langaboury)</small></span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Montage / démontage PC complet<br><small style="color:var(--muted);font-size:10px">Composants assemblés et désassemblés, connaissance du matériel</small></span><span class="skill-badge badge-mid">Réalisé</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Active Directory<br><small style="color:var(--muted);font-size:10px">Rôle et fonctionnement connus — pratique à construire en BTS</small></span><span class="skill-badge badge-learn">Théorie</span></div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">💻 Langages — Programmation</div>
+        <div class="skill-list">
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">C — langage principal<br><small style="color:var(--muted);font-size:10px">Le plus familier : algorithmique, structures de contrôle, tableaux, pointeurs, fonctions. Projet Awalé (examen), TP divers</small></span><span class="skill-badge badge-mid">Intermédiaire+</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Python — algo & Jupyter<br><small style="color:var(--muted);font-size:10px">Structures de contrôle, itérations, tableaux, algorithmes. Utilisation de Jupyter Lab/Notebook pour les TP et analyses</small></span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">PHP · HTML · CSS<br><small style="color:var(--muted);font-size:10px">Plusieurs projets complets : réseau social (inscription, sessions, BDD), Langaboury (interface user/admin, validation), TP divers</small></span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">SQL — bases de données<br><small style="color:var(--muted);font-size:10px">SELECT, JOIN, création de tables, gestion d'utilisateurs. Utilisé dans tous les projets web</small></span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Bash<br><small style="color:var(--muted);font-size:10px">Scripts basiques écrits en TP : automatisation de commandes, redirection vers fichiers .txt</small></span><span class="skill-badge badge-learn">Débutant</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Pascal · R/RStudio · Assembleur<br><small style="color:var(--muted);font-size:10px">Pratiqués en cours et TP universitaires — bases acquises</small></span><span class="skill-badge badge-learn">Notions</span></div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">🔧 Outils & Méthodes</div>
+        <div class="skill-list">
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Git / GitHub<br><small style="color:var(--muted);font-size:10px">commit, push, gestion de branches, résolution de conflits basique, GitHub Pages — utilisé sur tous les projets en équipe</small></span><span class="skill-badge badge-mid">Intermédiaire</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Débogage & tests<br><small style="color:var(--muted);font-size:10px">Débogage en terminal (C), tests fonctionnels manuels, validation des fonctionnalités projet par projet</small></span><span class="skill-badge badge-mid">Pratiqué</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Gestion de projet collaborative<br><small style="color:var(--muted);font-size:10px">Répartition des tâches, coordination en équipe de 4, communication régulière — projet Langaboury</small></span><span class="skill-badge badge-mid">Pratiqué</span></div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">🔩 Matériel</div>
+        <div class="skill-list">
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Montage / démontage PC complet<br><small style="color:var(--muted);font-size:10px">Assemblage et désassemblage de composants — connaissance pratique du matériel informatique</small></span><span class="skill-badge badge-mid">Réalisé</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Architecture des ordinateurs<br><small style="color:var(--muted);font-size:10px">Cours en licence : processeur, mémoire, bus, registres, cycle fetch-decode-execute</small></span><span class="skill-badge badge-mid">Théorie+TP</span></div>
+          <div class="skill-line"><div class="skill-dot-m"></div><span class="skill-name">Programmation assembleur<br><small style="color:var(--muted);font-size:10px">Cours et TP en licence — instructions de base, registres, appels système</small></span><span class="skill-badge badge-learn">Notions</span></div>
         </div>
       </div>
 
