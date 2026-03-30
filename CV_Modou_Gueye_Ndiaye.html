@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Modou Gueye Ndiaye</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #0f1f38;
+    --navy-mid:   #162844;
+    --navy-light: #1e3a5f;
+    --gold:       #c9a84c;
+    --gold-light: #e8c97a;
+    --text:       #1a1a2e;
+    --muted:      #5a6a82;
+    --border:     #d4cfc4;
+    --white:      #ffffff;
+    --tag-bg:     #eef2f8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e8e4dc;
+    display: flex; justify-content: center; align-items: flex-start;
+    min-height: 100vh; padding: 24px;
+  }
+  .page {
+    width: 210mm; min-height: 297mm;
+    background: var(--white);
+    display: grid; grid-template-columns: 66mm 1fr;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+
+  /* SIDEBAR */
+  .sidebar { background: var(--navy); display: flex; flex-direction: column; position: relative; }
+  .sidebar::after {
+    content:''; position:absolute; top:0; right:0;
+    width:2px; height:100%;
+    background: linear-gradient(to bottom, var(--gold), transparent 55%);
+  }
+  .sidebar-header { background: var(--navy-mid); padding: 24px 18px 18px; position: relative; }
+  .sidebar-header::after {
+    content:''; position:absolute; bottom:0; left:18px; right:18px;
+    height:1px; background: linear-gradient(to right, var(--gold), transparent);
+  }
+  .name-first { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:13px; letter-spacing:3px; color:rgba(255,255,255,0.5); text-transform:uppercase; }
+  .name-last  { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:20px; color:var(--white); line-height:1.1; letter-spacing:1px; }
+  .title-badge {
+    margin-top:8px; display:inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color:var(--navy); font-size:6.5px; font-weight:600; letter-spacing:1.2px;
+    text-transform:uppercase; padding:3px 8px; border-radius:2px;
+  }
+  .subtitle { margin-top:3px; font-size:7.5px; color:rgba(255,255,255,0.38); letter-spacing:0.5px; }
+
+  .sidebar-body { padding:14px 18px; flex:1; display:flex; flex-direction:column; }
+
+  .contacts { margin-bottom:13px; }
+  .contact-row { display:flex; align-items:center; gap:7px; margin-bottom:5px; }
+  .contact-icon {
+    width:16px; height:16px;
+    background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.28);
+    border-radius:3px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-icon svg { width:7.5px; height:7.5px; fill:var(--gold); }
+  .contact-text { font-size:7px; color:rgba(255,255,255,0.68); line-height:1.3; }
+  .contact-text a { color:var(--gold-light); text-decoration:none; }
+
+  .s-section { margin-bottom:12px; }
+  .s-title {
+    font-family:'Cormorant Garamond',serif; font-size:9px; font-weight:600;
+    color:var(--gold); letter-spacing:2px; text-transform:uppercase;
+    margin-bottom:7px; padding-bottom:3px; border-bottom:1px solid rgba(201,168,76,0.18);
+  }
+  .skill-cat {
+    font-size:6.5px; font-weight:500; color:rgba(255,255,255,0.38);
+    letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; margin-top:8px;
+  }
+  .skill-cat:first-child { margin-top:0; }
+  .skill-row { display:flex; align-items:flex-start; gap:6px; margin-bottom:3px; }
+  .skill-dot { width:3px; height:3px; background:var(--gold); border-radius:50%; flex-shrink:0; margin-top:5px; opacity:0.65; }
+  .skill-text { font-size:7px; color:rgba(255,255,255,0.75); line-height:1.45; }
+  .skill-note { font-size:6px; color:rgba(255,255,255,0.32); font-style:italic; }
+
+  .tag-group { display:flex; flex-wrap:wrap; gap:3px; }
+  .tag { font-size:6.5px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.11); color:rgba(255,255,255,0.68); padding:2px 5px; border-radius:2px; }
+
+  .dispo-box { background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.22); border-radius:4px; padding:6px 10px; text-align:center; }
+  .dispo-date { font-size:8.5px; font-weight:500; color:var(--gold-light); }
+  .dispo-rythme { font-size:6.5px; color:rgba(255,255,255,0.38); margin-top:2px; }
+
+  .langue-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+  .langue-name { font-size:7px; color:rgba(255,255,255,0.75); }
+  .langue-level { font-size:6px; color:var(--gold); background:rgba(201,168,76,0.1); padding:1px 5px; border-radius:10px; }
+
+  /* MAIN */
+  .main { background:var(--white); padding:24px 22px 16px 20px; display:flex; flex-direction:column; }
+
+  .section-header { display:flex; align-items:center; gap:8px; margin-bottom:9px; margin-top:13px; }
+  .section-header:first-child { margin-top:0; }
+  .section-icon { width:21px; height:21px; background:var(--navy); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .section-icon svg { width:10px; height:10px; fill:var(--gold); }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:13px; font-weight:700; color:var(--navy); letter-spacing:0.5px; }
+  .section-line { flex:1; height:1px; background:linear-gradient(to right, var(--navy-light), transparent); opacity:0.18; }
+
+  .about-text { font-size:7.5px; color:var(--muted); line-height:1.72; border-left:2px solid var(--gold); padding-left:9px; }
+  .about-text strong { color:var(--navy); }
+
+  .comp-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+  .comp-card { background:#f7f9fc; border:1px solid #e4eaf4; border-radius:5px; padding:7px 9px; border-top:2px solid var(--navy); }
+  .comp-card-title { font-size:6.5px; font-weight:500; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:5px; }
+  .comp-items { display:flex; flex-wrap:wrap; gap:3px; }
+  .comp-item { font-size:6.5px; background:white; border:1px solid #d0d9ea; color:var(--text); padding:2px 5px; border-radius:2px; line-height:1.4; }
+  .comp-item.noted { border-color:rgba(201,168,76,0.35); color:var(--muted); font-style:italic; }
+
+  .entry { margin-bottom:7px; }
+  .entry:last-child { margin-bottom:0; }
+  .entry-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1px; }
+  .entry-title { font-size:8.5px; font-weight:500; color:var(--text); line-height:1.3; }
+  .entry-date {
+    font-size:6.5px; color:var(--gold); font-weight:500;
+    white-space:nowrap; margin-left:8px; margin-top:1px;
+    background:linear-gradient(135deg,#fff8ec,#fff3d6);
+    border:1px solid rgba(201,168,76,0.35); padding:1px 5px; border-radius:2px;
+  }
+  .entry-org { font-size:7px; color:var(--navy-light); font-weight:500; margin-bottom:2px; opacity:0.72; font-style:italic; }
+  .entry-desc { font-size:7px; color:var(--muted); line-height:1.55; }
+  .entry-tags { display:flex; flex-wrap:wrap; gap:3px; margin-top:3px; }
+  .entry-tag { font-size:6px; background:var(--tag-bg); color:var(--navy-light); border:1px solid #d6e0f0; padding:1px 5px; border-radius:2px; font-weight:500; }
+  .entry-divider { height:1px; background:var(--border); margin:6px 0; opacity:0.4; }
+  .exp-intro { font-size:6.5px; color:var(--muted); font-style:italic; margin-bottom:7px; padding:5px 9px; background:#f5f7fb; border-left:2px solid var(--navy-light); line-height:1.5; }
+
+  @media print {
+    body { padding:0; background:none; }
+    .page { box-shadow:none; width:210mm; min-height:297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="name-first">Modou</div>
+      <div class="name-last">GUEYE NDIAYE</div>
+      <div class="title-badge">Alternant Systèmes &amp; Réseaux</div>
+      <div class="subtitle">BTS SIO (Services Informatiques aux Organisations) option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</div>
+    </div>
+
+    <div class="sidebar-body">
+
+      <div class="contacts">
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <span class="contact-text">06 52 66 03 31</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <span class="contact-text"><a href="mailto:gueyemodouc@gmail.com">gueyemodouc@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <span class="contact-text">Canteleu, 76380 Rouen</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+          <span class="contact-text"><a href="https://github.com/modou-gueye-ndiaye" target="_blank">github.com/modou-gueye-ndiaye</a></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+          <span class="contact-text"><a href="https://linkedin.com/in/modou-gueye-ndiaye" target="_blank">linkedin.com/in/modou-gueye-ndiaye</a></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>
+          <span class="contact-text"><a href="https://modou-gueye-ndiaye.github.io" target="_blank">🌐 Portfolio — modou-gueye-ndiaye.dev</a></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg></div>
+          <span class="contact-text">Permis B &nbsp;·&nbsp; né le 24/07/2001</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Disponibilité</div>
+        <div class="dispo-box">
+          <div class="dispo-date">Septembre 2026</div>
+          <div class="dispo-rythme">3 jours entreprise / 2 jours école</div>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Systèmes</div>
+        <div class="skill-cat">Linux / Ubuntu — Système principal</div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Usage quotidien au quotidien</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Terminal : navigation, gestion de fichiers</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Permissions : chmod, chown, sudo</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Gestion paquets apt, mises à jour</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Partitions &amp; montages de disques</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Scripts Bash (automatisation)</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Personnalisation &amp; config système</div></div></div>
+        <div class="skill-cat">Windows</div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Maîtrise du système d'exploitation</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Pack Office (Word, Excel, PowerPoint…)</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Active Directory <span class="skill-note">— rôle connu, non pratiqué</span></div></div></div>
+        <div class="skill-cat">Virtualisation</div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">VirtualBox — création &amp; gestion de VMs</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Modes réseau VM <span class="skill-note">— définitions connues</span></div></div></div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Réseaux</div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Notions fondamentales : TCP/IP, IPv4</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Définitions &amp; rôles : DNS, DHCP, routage</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Commandes de base : ping, traceroute</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Serveur SSH <span class="skill-note">— configuré en projet collaboratif</span></div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Serveur Web Apache <span class="skill-note">— déployé en projet collaboratif</span></div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Montage / démontage PC complet</div></div></div>
+        <div class="skill-row"><div class="skill-dot"></div><div><div class="skill-text">Config. box &amp; réseau domestique</div></div></div>
+        <span class="skill-note" style="display:block;margin-left:9px;margin-top:2px">Pratique à approfondir en BTS</span>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Dev &amp; Outils</div>
+        <div class="tag-group">
+          <span class="tag">Python</span><span class="tag">C</span><span class="tag">SQL</span>
+          <span class="tag">Bash</span><span class="tag">HTML/CSS</span><span class="tag">PHP</span>
+          <span class="tag">Git/GitHub</span><span class="tag">Pascal</span>
+          <span class="tag">R / RStudio</span><span class="tag">Assembleur</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Langues</div>
+        <div class="langue-row"><span class="langue-name">Français</span><span class="langue-level">Courant</span></div>
+        <div class="langue-row"><span class="langue-name">Anglais</span><span class="langue-level">Technique</span></div>
+        <div class="langue-row"><span class="langue-name">Espagnol</span><span class="langue-level">Courant</span></div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Qualités</div>
+        <div class="tag-group">
+          <span class="tag">Autonome</span><span class="tag">Rigoureux</span>
+          <span class="tag">Adaptable</span><span class="tag">Organisé</span>
+          <span class="tag">Esprit d'équipe</span><span class="tag">Persévérant</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-title">Centres d'intérêt</div>
+        <div class="tag-group">
+          <span class="tag">🏀 Basket-ball</span>
+          <span class="tag">💪 Musculation</span>
+          <span class="tag">🎮 Jeux vidéo</span>
+          <span class="tag">📖 Mangas</span>
+          <span class="tag">📚 Lecture</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+      <span class="section-title">À Propos</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="about-text">
+      Actuellement en Licence Informatique à Rouen, j'ai fait le choix de me réorienter vers une formation plus professionnalisante afin d'intégrer concrètement le monde de l'informatique. <strong>Utilisateur avancé Linux (Ubuntu)</strong> en environnement personnel — scripting Bash, gestion des permissions, configuration système au quotidien — passionné par les systèmes et les réseaux, je souhaite développer des compétences techniques directement en entreprise à travers une alternance en <strong>BTS SIO (Services Informatiques aux Organisations) option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</strong>. Mon parcours atypique — entre plusieurs pays, plusieurs domaines — m'a forgé une vraie capacité d'adaptation et un sens des responsabilités que je mets aujourd'hui au service de ma reconversion technique. Déterminé et impliqué, je suis prêt à m'investir pleinement dans un environnement exigeant.
+    </p>
+
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+      <span class="section-title">Compétences Techniques</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-card-title">🖥 Admin. Systèmes Linux</div>
+        <div class="comp-items">
+          <span class="comp-item">Ubuntu — usage quotidien</span>
+          <span class="comp-item">Terminal avancé</span>
+          <span class="comp-item">chmod / chown / sudo</span>
+          <span class="comp-item">Gestion paquets apt</span>
+          <span class="comp-item">Partitions &amp; montages</span>
+          <span class="comp-item">Scripts Bash</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-title">🌐 Réseaux &amp; Infrastructure</div>
+        <div class="comp-items">
+          <span class="comp-item noted">TCP/IP · IPv4 (théorie)</span>
+          <span class="comp-item noted">DNS · DHCP (définitions)</span>
+          <span class="comp-item noted">NAT · Bridge (définitions)</span>
+          <span class="comp-item">ping · traceroute</span>
+          <span class="comp-item">Serveur SSH — configuré en projet</span>
+          <span class="comp-item">Serveur Web Apache — déployé en projet</span>
+          <span class="comp-item">Montage / démontage PC complet</span>
+          <span class="comp-item">Configuration box / réseau domestique</span>
+          <span class="comp-item noted">Pratique à approfondir en BTS</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-title">🪟 Windows &amp; Virtualisation</div>
+        <div class="comp-items">
+          <span class="comp-item">Windows — maîtrise OS</span>
+          <span class="comp-item">Pack Office complet</span>
+          <span class="comp-item">VirtualBox — VMs</span>
+          <span class="comp-item noted">Active Directory (rôle connu)</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-title">💻 Dev &amp; Méthodes</div>
+        <div class="comp-items">
+          <span class="comp-item">Python · C · SQL</span>
+          <span class="comp-item">PHP · HTML/CSS</span>
+          <span class="comp-item">Git / GitHub</span>
+          <span class="comp-item">Tests &amp; débogage</span>
+          <span class="comp-item">Gestion de projet agile</span>
+          <span class="comp-item noted">Pascal (académique)</span>
+          <span class="comp-item noted">R / RStudio (académique)</span>
+          <span class="comp-item noted">Assembleur — initiation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+      <span class="section-title">Projets Académiques</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Projet collaboratif — Jeu « Langaboury »</div>
+        <div class="entry-date">2025 – 2026</div>
+      </div>
+      <div class="entry-org">Université de Rouen</div>
+      <div class="entry-desc">Développement full-stack : logique de jeu en C/Python, interface web HTML/CSS/PHP, base de données SQL. Gestion de la sécurité du site et du réseau. Versioning GitHub, tests unitaires, pilotage agile.</div>
+      <div class="entry-tags"><span class="entry-tag">C</span><span class="entry-tag">Python</span><span class="entry-tag">PHP</span><span class="entry-tag">SQL</span><span class="entry-tag">HTML/CSS</span><span class="entry-tag">GitHub</span><span class="entry-tag">Sécurité</span><span class="entry-tag">Réseau</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Conception d'un réseau social</div>
+        <div class="entry-date">2024 – 2025</div>
+      </div>
+      <div class="entry-org">Université de Rouen</div>
+      <div class="entry-desc">Conception et développement d'une plateforme sociale : architecture du système, fonctionnalités d'inscription, publication et messagerie. Base de données SQL, gestion des utilisateurs, déploiement sur VMs VirtualBox.</div>
+      <div class="entry-tags"><span class="entry-tag">SQL</span><span class="entry-tag">PHP</span><span class="entry-tag">HTML/CSS</span><span class="entry-tag">VirtualBox</span><span class="entry-tag">Git</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Développement du jeu Awalé</div>
+        <div class="entry-date">2023 – 2024</div>
+      </div>
+      <div class="entry-org">Université de Perpignan</div>
+      <div class="entry-desc">Implémentation complète en C : logique métier, gestion des règles, boucle de jeu. Débogage en terminal, optimisation et validation fonctionnelle.</div>
+      <div class="entry-tags"><span class="entry-tag">C</span><span class="entry-tag">Algorithmique</span><span class="entry-tag">Débogage</span></div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-7 9.26V15l7 3.87 7-3.87v-2.74L12 16 5 12.26z"/></svg></div>
+      <span class="section-title">Formations</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Licence Portail Informatique</div>
+        <div class="entry-date">Depuis 2024</div>
+      </div>
+      <div class="entry-org">Université de Rouen</div>
+      <div class="entry-desc">Programmation impérative · Algorithmique en C · Logique et structures algébriques · Logique combinatoire et séquentielle · Espaces vectoriels · Architectures des ordinateurs (assembleur) · Outils de développement web · Outils d'analyse. Projets pratiques individuels et en équipe.</div>
+    </div>
+    <div class="entry-divider"></div>
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Préparation Mathématiques &amp; Informatique</div>
+        <div class="entry-date">2022 – 2024</div>
+      </div>
+      <div class="entry-org">Université de Perpignan Via Domitia</div>
+      <div class="entry-desc">Algorithmique, logique, architecture des systèmes et mathématiques discrètes.</div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg></div>
+      <span class="section-title">Expériences Professionnelles</span>
+      <div class="section-line"></div>
+    </div>
+
+    <p class="exp-intro">Des environnements exigeants qui ont forgé rigueur, fiabilité et gestion des priorités — qualités directement transférables en contexte technique.</p>
+
+    <div class="entry">
+      <div class="entry-header"><div class="entry-title">Commis de Cuisine — Cuisine Froide</div><div class="entry-date">2024 – 2025</div></div>
+      <div class="entry-org">Copa Cabana — Collioure, France</div>
+      <div class="entry-desc">Préparation des entrées et plats froids, mise en place, gestion du poste. Rigueur sur les normes d'hygiène et coordination en brigade.</div>
+      <div class="entry-tags"><span class="entry-tag">Rigueur</span><span class="entry-tag">Organisation</span><span class="entry-tag">Travail en équipe</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header"><div class="entry-title">Équipier Polyvalent</div><div class="entry-date">2023 – 2024</div></div>
+      <div class="entry-org">KFC Perpignan Porte d'Espagne — France</div>
+      <div class="entry-desc">Rotation sur 4 postes : préparateur, caissier, preneur de commande, production. Gestion des flux clients à fort volume, respect strict des protocoles qualité.</div>
+      <div class="entry-tags"><span class="entry-tag">Multi-postes</span><span class="entry-tag">Gestion du stress</span><span class="entry-tag">Procédures qualité</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header"><div class="entry-title">Commis / Second de Cuisine — Cuisine Chaude</div><div class="entry-date">2022 – 2023</div></div>
+      <div class="entry-org">Le Monte Cristo — Argelès-sur-Mer, France</div>
+      <div class="entry-desc">Polyvalence selon les services : exécution des préparations (commis) ou coordination de brigade et prise de décisions (second). Gestion des priorités en service à flux tendu.</div>
+      <div class="entry-tags"><span class="entry-tag">Coordination</span><span class="entry-tag">Prise de décision</span><span class="entry-tag">Adaptabilité</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header"><div class="entry-title">Service Civique — Accompagnement Scolaire</div><div class="entry-date">2021 – 2022</div></div>
+      <div class="entry-org">Mairie de Perpignan — France</div>
+      <div class="entry-desc">Accompagnement quotidien d'élèves collège/lycée (17h–19h). Aide aux devoirs toutes matières, soutien individualisé et animation d'activités éducatives.</div>
+      <div class="entry-tags"><span class="entry-tag">Pédagogie</span><span class="entry-tag">Communication</span><span class="entry-tag">Initiative</span></div>
+    </div>
+    <div class="entry-divider"></div>
+
+    <div class="entry">
+      <div class="entry-header"><div class="entry-title">Aide Commerciale</div><div class="entry-date">2019 – 2021</div></div>
+      <div class="entry-org">Gueye et Frères — Dakar, Sénégal</div>
+      <div class="entry-desc">Inventaire hebdomadaire, rangement des marchandises, accueil et conseil client, vente et gestion de caisse.</div>
+      <div class="entry-tags"><span class="entry-tag">Sens commercial</span><span class=
